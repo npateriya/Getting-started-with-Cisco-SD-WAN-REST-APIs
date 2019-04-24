@@ -25,12 +25,9 @@ SDWAN_USERNAME = os.environ.get("SDWAN_USERNAME")
 SDWAN_PASSWORD = os.environ.get("SDWAN_PASSWORD")
 
 if SDWAN_IP is None or SDWAN_USERNAME is None or SDWAN_PASSWORD is None:
-    print("CISCO SDWAN details must be set via environment variables before running.")
-    print("   export SDWAN_IP=10.10.30.190")
-    print("   export SDWAN_USERNAME=admin")
-    print("   export SDWAN_PASSWORD=admin")
-    print("")
-    exit("1")
+    SDWAN_IP="sandboxsdwan.cisco.com"
+    SDWAN_USERNAME="devnetuser"
+    SDWAN_PASSWORD="Cisco123!"
 
 class rest_api_lib:
     def __init__(self, vmanage_ip, username, password):
